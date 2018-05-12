@@ -1,0 +1,16 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(Password.value, Email.value)">
+
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input type="email" #Email name="Email" ngModel class="form-control" id="inputEmail" 
+    aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input ngModel #Password  name="Password" type="password" class="form-control" 
+    id="inputPassword" placeholder="Password">
+  </div>
+
+  <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Sign in</button>
+</form>
