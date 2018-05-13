@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\semantic\\src\\site\\collections",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\register",
+    "\\src\\app\\sign-in-volunteer"
   ],
+  "SelectedNode": "\\src\\app\\register\\register.component.ts",
   "PreviewInSolutionExplorer": false
 }

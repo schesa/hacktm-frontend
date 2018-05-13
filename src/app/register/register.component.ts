@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NGO } from '../shared/ngo.model';
 import { Router } from '@angular/router';
 import { NgoService } from '../shared/ngo.service';
-import { publicEncrypt } from 'crypto';
-import {HttpErrorResponse} from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
