@@ -1,0 +1,45 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(Password.value, Email.value ,Purpose.value, Website.value, Location.value )">
+
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input required type="email" #Email name="Email" ngModel class="form-control" id="inputEmail" 
+   placeholder="Enter email">
+  </div>
+
+
+  <div class="form-group">
+    <label for="inputName">Name</label>
+    <input type="name" #Name name="Name" ngModel class="form-control" id="inputName" 
+placeholder="Enter name">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputPurpose">Purpose</label>
+    <input type="purpose" #Purpose name="Purpose" ngModel class="form-control" id="inputPurpose" 
+    placeholder="Enter purpose">
+  </div>
+
+  <div class="form-group">
+    <label for="inputWebsite">Website</label>
+    <input type="website" #Website name="Website" ngModel class="form-control" id="inputWebsite" 
+   placeholder="Enter website">
+  </div>
+
+  <div class="form-group">
+    <label for="inputLocation">Location</label>
+    <input type="location" #Location name="Location" ngModel class="form-control" id="inputLocation" 
+   placeholder="Enter location">
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input ngModel #Password  name="Password" type="password" class="form-control" 
+    id="inputPassword" placeholder="Password">
+  </div>
+  <div class="ui inverted segment">
+  <button [disabled]="!loginForm.valid" type="submit" class="ui inverted blue button">Register</button>
+  </div>
+  <div *ngIf="!inputPassword.valid">
+    Can't fool us</div>
+</form>
+

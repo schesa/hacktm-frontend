@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgoService } from '../shared/ngo.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-in-ngo',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInNgoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngoService: NgoService, private router:Router) { }
 
   ngOnInit() {
   }
+
+  onSubmit(password: String, email: String ){
+    this.ngoService.ngoAuthentication(password, email).subscribe((data:any)=>{
+        console.log(data);
+        this.router.navigate(['home']);
+      }, (err: HttpErrorResponse)=>{console.log(err);}
+    );
+}
 
 }

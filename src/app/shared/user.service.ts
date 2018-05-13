@@ -15,8 +15,6 @@ export class UserService {
   userAuthentication(password: String, email: String){
     var data = email+":"+password;
     var reqHeader = new HttpHeaders({'authorization': 'Basic ' + btoa(data)});
-    // console.log(reqHeader);
-    // var reqHeader = new HttpHeaders({'Authorization': 'Basic dGVzdEB0ZXN0LmNvbTp0ZXN0'});
     return this.http.post("/api/volunteers/login","", {headers : reqHeader, withCredentials:true});
   }
 }

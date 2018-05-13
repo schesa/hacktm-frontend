@@ -14,6 +14,8 @@ import { UserService } from './shared/user.service';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HomeComponent } from './home/home.component';
 import { SignInNgoComponent } from './sign-in-ngo/sign-in-ngo.component';
+import { NgoService } from './shared/ngo.service';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { SignInNgoComponent } from './sign-in-ngo/sign-in-ngo.component';
     SignUpComponent,
     HomeComponent,
     SignInVolunteerComponent,
-    SignInNgoComponent
+    SignInNgoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { SignInNgoComponent } from './sign-in-ngo/sign-in-ngo.component';
     HttpClientModule,
     FormsModule      
   ],
-  providers: [UserService],
+  providers: [UserService, NgoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

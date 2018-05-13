@@ -1,3 +1,20 @@
-<p>
-  sign-in-ngo works!
-</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(Password.value, Email.value)">
+
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input type="email" #Email name="Email" ngModel class="form-control" id="inputEmail" 
+    aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input ngModel #Password  name="Password" type="password" class="form-control" 
+    id="inputPassword" placeholder="Password">
+  </div>
+  <div class="ui inverted segment">
+  <button [disabled]="!loginForm.valid" type="submit" class="ui inverted blue button">Sign in</button>
+  </div>
+  <div class="ui inverted segment">
+    <button type="register" class="ui inverted button"><a class="nav-link" href="/register">Register</a> </button>
+    </div>
+</form>
