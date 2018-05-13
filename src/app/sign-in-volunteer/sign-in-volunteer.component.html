@@ -1,17 +1,27 @@
-<form #loginForm="ngForm" (ngSubmit)="onSubmit(Password.value, Email.value)">
-
-  <div class="form-group">
-    <label for="inputEmail">Email</label>
-    <input type="email" #Email name="Email" ngModel class="form-control" id="inputEmail" 
-    aria-describedby="emailHelp" placeholder="Enter email">
+  <div class="ui container logo">
+    <img class="ui fluid image" src="https://i.imgur.com/wCSg3QZ.png" alt="VoluntApp" />
   </div>
 
-  <div class="form-group">
-    <label for="inputPassword">Password</label>
-    <input ngModel #Password  name="Password" type="password" class="form-control" 
-    id="inputPassword" placeholder="Password">
+  <div class="ui segment login">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(Password.value, Email.value)">
+      <div class="ui left aligned container">
+        <h2> <span class="bold text">Autentificare</span> Voluntari</h2>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" #Email name="Email" ngModel class="form-control" id="inputEmail"
+               aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input ngModel #Password name="Password" type="password" class="form-control"
+               id="inputPassword" placeholder="Password">
+      </div>
+
+      <button [disabled]="!loginForm.valid" type="submit" class="fluid ui yellow button">Sign in</button>
+      <button [disabled]="!loginForm.valid" type="submit" class="fluid ui inverted yellow button">Creaază un cont!</button>
+
+    </form>
   </div>
-  <div class="ui inverted segment">
-  <button [disabled]="!loginForm.valid" type="submit" class="ui inverted blue button">Sign in</button>
-  </div>
-</form>
