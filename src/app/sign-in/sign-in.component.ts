@@ -8,7 +8,6 @@ import {HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
   loginForm;
 
   constructor(private userService: UserService, private router:Router) { }
@@ -16,10 +15,19 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(password: String, email: String ){
-      this.userService.userAuthentication(password, email).subscribe((data:any)=>{
-          this.router.navigate(['home']);
-      }, (err: HttpErrorResponse)=>{});
+  getString(){
+    this.userService.getString().subscribe((data:any)=>{
+        console.log(data);
+    }, (err: HttpErrorResponse)=>{console.log(err);
+    });
   }
 
+  onSubmit(password: String, email: String ){
+    // this.getString();
+      this.userService.userAuthentication(password, email).subscribe((data:any)=>{
+          console.log(data);
+          this.router.navigate(['home']);
+      }, (err: HttpErrorResponse)=>{console.log(err);
+      });
+  }
 }
